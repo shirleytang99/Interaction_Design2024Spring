@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>CSS Selector and CSS Positioning</title>
+    <style type="text/css">
+      a:link {color:green;}
+      a:visited {color:red;}
+      p:hover {color:red;}
+
+      body{
+        margin:20px;
+        border:solid 1px black;
+      }
+      .container{
+        margin:30px;
+        border:solid 1px orange;
+        padding:10px;
+      }
+      .box1{
+        width:100px;
+        height:100px;
+        background:blue;
+      }
+      .box2{
+        width:100px;
+        height:100px;
+        background:green;
+        border: yellow solid;
+        position:absolute;
+        left:50px;
+        top:50px;
+      }
+      .box3{
+        width:100px;
+        height:100px;
+        background:red;
+      }
+      .box4{
+        width:100px;
+        height:100px;
+        background:pink;
+      }
+    </style>
+  </head>
+  <body>
+
+      <h1 id="tst1">Both style declarations apply.</h1>
+      <h2 id="tst1">Only one style declaration apply.</h2>
+      <h3>The h3 text-align set to left.</h3>
+      <p>The p text-align set to center.</p>
+      <p>The red style <strong>has been applied to this element.</strong></p>
+      <p>The red style <strong>has not been applied to this element.</strong></p>
+      <a href="http://by.cuc.edu.cn/">Visit CUC Website</a>
+
+    <div class="container">
+      <div class="box1"></div>
+      <div class="box2"></div>
+      <div class="box3"></div>
+      <div class="box4"></div>
+    </div>
+
+  </body>
+</html>
