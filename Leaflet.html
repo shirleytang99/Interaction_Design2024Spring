@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Leaflet</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+        crossorigin=""></script>
+  </head>
+  <body>
+    <div id="map" style="width:600px; height:400px"></div>
+    <button onclick="show_districts()">Show Districts</button>
+    <button onclick="show_points()">Show Points</button>
+    <br>
+    <iframe src="https://uploads.knightlab.com/storymapjs/f256371e822d5db38462834a9774d89c/week7-2024/index.html" frameborder="0" width="100%" height="800"></iframe>
+
+    <script>
+      var map = L.map('map').setView([22.287111, 114.191667], 13);
+
+      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);
+
+function show_districts(){
+  var marker = L.marker([51.5, -0.09]).addTo(map)
+  .bindPopup('<b>Hello world!</b><br>I am popup.');
+
+  var circle = L.circle([51.508, -0.11], {
+      color: 'red',
+      fillColor: '#f03',
+      fillOpacity: 0.5,
+      radius: 500
+  }).addTo(map).bindPopup('I am a circle.');
+
+  var polygon = L.polygon([
+      [51.509, -0.08],
+      [51.503, -0.06],
+      [51.51, -0.047]
+  ]).addTo(map).bindPopup('I am a ploygon.');
+};
+
+function show_points(){
+      L.marker([22.287111, 114.191667]).addTo(map)
+    		.bindPopup('<a href="https://en.wikipedia.org/wiki/North_Point" target="_blank">'+ '<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/City_Garden.jpg/250px-City_Garden.jpg" style="width:80px;height:80px;"><br>' +'North_Point'+'</a>').openPopup();
+    }
+
+
+      </script>
+  </body>
+</html>
